@@ -25,4 +25,9 @@ app.get('/', (req, res) => {
     .then(TestData => {
         console.log(TestData)
         res.send(TestData.rows);
-    
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+        
+    });
