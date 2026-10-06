@@ -21,4 +21,8 @@ const pool = new Pool({
 
 app.get('/', (req, res) => {
     res.send("Test Data :");
+    pool.query('Select * from Biodata')
+    .then(TestData => {
+        console.log(TestData)
+        res.send(TestData.rows);
     
