@@ -15,13 +15,13 @@ const pool = new Pool({
     user: 'postgres',
     host : 'localhost',
     database: 'mahasiswa',
-    password: '1010',
+    password: 'Anjing14560',
     port: 5432,
 })
 
-app.get('/', (req, res) => {
-    res.send("Test Data :");
-    pool.query('Select * from Biodata')
+app.get('/', (req, res,next) => {
+    console.log("Test Data :");
+    pool.query('Select * from biodata')
     .then(TestData => {
         console.log(TestData)
         res.send(TestData.rows);
